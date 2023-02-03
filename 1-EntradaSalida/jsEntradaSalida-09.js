@@ -6,14 +6,13 @@ en el cuadro de texto "RESULTADO".*/
 
 function mostrarAumento()
 {
-	let numeroUno
-	let resultado
-
-	numeroUno = document.getElementById("txtIdSueldo").value;
+	let numeroUno;
+	let resultado;
 	
+	numeroUno = document.getElementById("txtIdSueldo").value;
 	numeroUno = parseInt(numeroUno);
 
-	resultado = numeroUno + numeroUno / 100 * 10 ;
+	resultado = numeroUno + (numeroUno / 100 * 10) ;
 
-	document.getElementById("txtIdResultado").value = resultado
+	document.getElementById("txtIdResultado").value = resultado;
 }

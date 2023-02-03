@@ -7,12 +7,11 @@ function mostrarAumento()
 {
 	let numeroUno
 	let resultado
-
-	numeroUno = document.getElementById("txtIdImporte").value;
 	
+	numeroUno = document.getElementById("txtIdImporte").value;
 	numeroUno = parseInt(numeroUno);
 
-	resultado = numeroUno / 100 * 25 ;
+	resultado = numeroUno - (numeroUno / 100 * 25) ;
 
 	document.getElementById("txtIdResultado").value = resultado
 }
