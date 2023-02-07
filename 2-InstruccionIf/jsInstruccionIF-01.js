@@ -17,7 +17,7 @@ function mostrar()
     ==       IGUAL A
     !=       DISTINTO A
     
-    >		 MAYOR QUE
+    >		    MAYOR QUE
     <        MENOR QUE
     >        MAYOR O IGUAL A
     <        MENOR O IGUAL A

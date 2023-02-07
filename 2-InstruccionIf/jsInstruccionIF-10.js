@@ -17,14 +17,16 @@ function mostrar()
 	{
 		alert("nota: " + numeroRandom + "   REPROBÓ... SUERTE LA PROXIMA")
 	}
-}
+}//ENTREGADO
 
 /*	DATO DATO DATO
 
-aprobo = [5, 6, 7, 8];	LE ASIGNO VARIOS VALORES A LA VARIABLE
-alert(aprobo[2]);		CON EL 0, MOSTRARIA EL 5, 1 = 6, 2 = 7...etc.
-
+	aprobo = [5, 6, 7, 8];	LE ASIGNO VARIOS VALORES A LA VARIABLE
+	alert(aprobo[2]);		CON EL 0, MOSTRARIA EL 5, 1 = 6, 2 = 7...etc.
+	
 */
+
+
 
 /* POR QUÉ NO FUNCIONA???
 
@@ -38,7 +40,7 @@ alert(aprobo[2]);		CON EL 0, MOSTRARIA EL 5, 1 = 6, 2 = 7...etc.
 	excelente = "9" + "10";
 	excelente = parseInt(excelente);
 	aprobo = [5, 6, 7, 8];
-	reprobo = [1, 2, 3, 4];
+	aprobo = parseInt(aprobo);
 
 	if (numeroRandom == excelente)
 	{

@@ -6,8 +6,7 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 
 function Rectangulo () 
 {   
-    //AREA/SUPERFICIE: El espacio dentro de la figura
-    //PERÍMETRO: Es la suma de todos los lados
+    //PERÍMETRO RECTANGULO: ( (lado1 * 2) + (lado2 *2) ) Es la suma de todos los lados
     let largoTerreno;
     let anchoTerreno;
     let cantidadAlambre;
@@ -22,11 +21,12 @@ function Rectangulo ()
 
     alert("se necesitaran " + cantidadAlambre + " metros de alambre");
 }
+
 function Circulo () 
 {   
     // RADIO: El radio es  la recta que va del centro a un extremo del circulo
-	// DIAMETRO: El diámetro es la recta que pasa por el centro y toca dos puntos del borde de un círculo.
-        //perímetro de circulo = pi * diametro
+	// DIAMETRO: (radio * 2) El diámetro es la recta que pasa por el centro y toca dos puntos del borde de un círculo.
+    // PERIMETRO de circulo = pi * diametro
     let radioTerreno;
     let diametro;
     let perímetro;
@@ -35,21 +35,23 @@ function Circulo ()
 
     diametro = radioTerreno * 2;
 
-    perímetro = Math.PI * diametro; 
+    perímetro = Math.round(Math.PI * diametro); 
 
     alambre = perímetro * 3;
 
     alert ("se necesitaran " + alambre + " metros de alambre")
 }
+
 function Materiales () 
 {
-    // 1m * 1m necesita 2 cemento 3 cal
+    // AREA/SUPERFICIE: (lado * ancho (de la figura) ) El espacio dentro de la figura 
+    // 1m * 1m (1 metro cuadrado) necesita 2 cemento 3 cal
+    
 	let largoTerreno;
     let anchoTerreno;
     let areaRectangulo;
     let cantidadCemento;
     let cantidadCal;
-    
 
     largoTerreno = document.getElementById("txtIdLargo").value;
     anchoTerreno = document.getElementById("txtIdAncho").value;

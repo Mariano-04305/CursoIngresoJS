@@ -12,13 +12,17 @@ function mostrar()
 	}
 }
 
-/* 	PREGUNTAR SI ES CORRECTO
+/* 	OTRA FORMA
 
-	if (edadIngresada < 18)
+	if (edadIngresada <= 18)
 	{
 		if (estadoCivil != "Soltero")
 		{
 			alert("Es muy pequeño para NO ser soltero.")
 		}
+	}
+	else
+	{
+		alert("usted no es menor")
 	}
 */

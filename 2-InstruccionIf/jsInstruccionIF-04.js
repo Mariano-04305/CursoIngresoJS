@@ -9,3 +9,13 @@ function mostrar()
 		alert("usted es adolescente")
 	}
 }
+
+/*	IF ANIDADOS
+	if (edad < 18) 
+	{
+		if (edad >= 13) 
+		{
+			alert("es adolescente")
+		}
+	}
+*/
