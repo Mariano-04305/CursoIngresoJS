@@ -16,3 +16,22 @@ function mostrar()
 		alert("Es soltero y no es menor");
 	}
 } //ENTREGADO
+
+ //OPERADORES COMPARACION
+    /*
+
+    ==       IGUAL A
+    !=       DISTINTO A
+    
+    >		    MAYOR QUE
+    <        MENOR QUE
+    >        MAYOR O IGUAL A
+    <        MENOR O IGUAL A
+
+    //OPERADORES LOGICOS
+	
+    &&         = Y 
+    ||  	      = O  or
+    !  		   = CONTRARIO
+
+    */

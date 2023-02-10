@@ -1,10 +1,32 @@
 function mostrar()
 { 
 	let edad;
+	let mensaje;
 
 	edad = document.getElementById("txtIdEdad").value;
 	edad = parseInt(edad);
 
+	if (edad >= 18)
+	{
+		mensaje = "Usted es mayor de edad";
+	}
+	else
+	{
+		if (edad < 18 && edad > 12)
+		{
+			mensaje = "Usted es adolescente";
+		}
+		else
+		{
+			mensaje = "Usted es un niño";
+		}
+	}
+
+	alert(mensaje);
+	
+}
+
+/*
 	if (edad <= 3)
 	{
 		alert("sos un bebito")
@@ -60,7 +82,7 @@ function mostrar()
 	}
 	
 }
-
+*/
 /*	CONSIGNA REAL
 if (edad <= 12) {
 
@@ -86,18 +108,16 @@ if (edad <= 12) {
 
 	if (edad <= 12) 
 	{
-		
 		alert("uste e niñoou");
-
 	} 
 	else 
 	{
-
 		if (edad >= 13 && edad <= 17) 
 		{
 			alert("ud es adoles");
 		}	
-		else {
+		else 
+		{
 			alert("u e adulttto");
 		}
 	}

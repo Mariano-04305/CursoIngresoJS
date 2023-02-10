@@ -1,22 +1,29 @@
 function mostrar()
 {
 	let numeroRandom;
-	
+	let mensaje;
+
 	numeroRandom = Math.round(Math.random()*10);
 
 	
 	if (numeroRandom <= 10 && numeroRandom > 8)
 	{
-		alert("nota: " + numeroRandom + "   calificacion: EXCELENTE");
+		mensaje = "nota: " + numeroRandom + "   calificacion: EXCELENTE";
 	} 
-	else if (numeroRandom <= 8 && numeroRandom > 4)
-	{
-		alert("nota: " + numeroRandom + "   calificacion: APROBÓ");
-	}
 	else 
 	{
-		alert("nota: " + numeroRandom + "   REPROBÓ... SUERTE LA PROXIMA")
+		if (numeroRandom <= 8 && numeroRandom > 4)
+		{
+			mensaje = "nota: " + numeroRandom + "   calificacion: APROBÓ";
+		}
+		else
+		{
+			mensaje = "nota: " + numeroRandom + "   REPROBÓ... SUERTE LA PROXIMA";
+		}
 	}
+	
+	alert(mensaje);
+
 }//ENTREGADO
 
 /*	DATO DATO DATO

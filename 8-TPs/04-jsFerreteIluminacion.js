@@ -11,6 +11,93 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
 function CalcularPrecio () 
 {
+   let lamparasCantidad;
+   let marca;
+   let precioLamparas;
+   let porcentaje;
+   let porcentajeTotal;
+   let iva;
+   let precioConDescuento;
+   
+   lamparasCantidad = document.getElementById("txtIdCantidad").value;
+   lamparasCantidad = parseInt(lamparasCantidad);
+
+   marca = document.getElementById("Marca").value;
+   
+   precioLamparas = 35 * lamparasCantidad;
+
+   switch (lamparasCantidad)
+   {
+        case 0:
+        case 1:
+        case 2:
+            porcentaje = 0;
+            break;
+        case 3:
+            switch (marca)
+            {
+                case "ArgentinaLuz":
+                    porcentaje = 0.15;
+                    break;
+                case "FelipeLamparas":
+                    porcentaje = 0.10;
+                    break;
+                default:
+                    porcentaje = 0.05;
+            }
+            break;
+        case 4:
+            switch (marca)
+            {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    porcentaje = 0.25;
+                    break;
+                default:
+                    porcentaje = 0.20;
+            }
+            break;
+        case 5: 
+            switch (marca)
+            {
+                case "ArgentinaLuz":
+                    porcentaje = 0.40;
+                    break;
+                default:
+                    porcentaje = 0.30;
+            }
+            break;
+        case 6:
+            switch (marca)
+            {
+                default:
+                    porcentaje = 0.50;
+            }
+            break;
+        default:
+            porcentaje = 0;
+   }
+
+   porcentajeTotal = precioLamparas * porcentaje;
+
+   precioConDescuento = precioLamparas - porcentajeTotal;
+
+   if (precioConDescuento >= 120)
+   {
+        iva = precioConDescuento * 0.10;
+        precioConDescuento = precioConDescuento + iva;
+        alert ("EN IIBB: " + iva);
+   }
+   
+   document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
+}
+
+
+
+
+
+/*  ESTÁ BIEN HECHO CON IF (con comentarios dentro, puede ser confuso)
+
     let lamparasCompradas;
     let precioLamparas;
     let precioLamparasCompradas;
@@ -38,88 +125,107 @@ ej: si hubiese hecho todas las variables de descuento separadas;
   LO QUE SE REPITE SIEMPRE LO PUEDO SIMPLIFICAR Y HACER UNA VEZ 
 */
 
-    precioLamparas = 35;
+
+/*
+precioLamparas = 35;
     
-    lamparasCompradas = document.getElementById("txtIdCantidad").value;
-    lamparasCompradas = parseInt(lamparasCompradas);
+lamparasCompradas = document.getElementById("txtIdCantidad").value;
+lamparasCompradas = parseInt(lamparasCompradas);
 
-    marca = document.getElementById("Marca").value;
+marca = document.getElementById("Marca").value;
 
-    precioLamparasCompradas = lamparasCompradas * precioLamparas;
+precioLamparasCompradas = lamparasCompradas * precioLamparas;
 
-    if (lamparasCompradas >= 6)
+if (lamparasCompradas >= 6)
+{
+    porcentaje = 50;
+}
+else
+{
+    if (lamparasCompradas == 5)
     {
-        porcentaje = 50;
-    }
-    else
-    {
-        if (lamparasCompradas == 5)
+        if (marca == "ArgentinaLuz")
         {
-            if (marca == "ArgentinaLuz")
+            porcentaje = 40;  
+        }
+        else
+        {
+           porcentaje = 30;
+        }
+    }
+    else 
+    {   
+        if (lamparasCompradas == 4)
+        {
+            if (marca == "ArgentinaLuz" || marca == "FelipeLamparas")
             {
-                porcentaje = 40;  
+                porcentaje = 25;
             }
             else
             {
-               porcentaje = 30;
+                porcentaje = 20;
             }
         }
-        else 
-        {   
-            if (lamparasCompradas == 4)
+        else
+        {
+            if (lamparasCompradas == 3)
             {
-                if (marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+                if (marca == "ArgentinaLuz")
                 {
-                    porcentaje = 25;
+                   porcentaje = 15; 
                 }
                 else
                 {
-                    porcentaje = 20;
-                }
-            }
-            else
-            {
-                if (lamparasCompradas == 3)
-                {
-                    if (marca == "ArgentinaLuz")
+                    if(marca == "FelipeLamparas")
                     {
-                       porcentaje = 15; 
+                        porcentaje = 10;
                     }
                     else
                     {
-                        if(marca == "FelipeLamparas")
-                        {
-                            porcentaje = 10;
-                        }
-                        else
-                        {
-                            porcentaje = 5;
-                        }
+                        porcentaje = 5;
                     }
                 }
-                if (lamparasCompradas < 3)
-                {
-                   
-                    porcentaje = 0;
-                }
             }
-        } 
-    }
-    
-    descuento = precioLamparasCompradas / 100 * porcentaje;
-    precioConDescuento = precioLamparasCompradas - porcentaje;
-
-    iva = (precioConDescuento * 0.10);
-
-    if (precioConDescuento >= 120)
-    {
-        precioConDescuento = precioConDescuento + iva;
-
-        alert("IIBB Usted pago: " + iva);
-    }
-
-    document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
+            if (lamparasCompradas < 3)
+            {
+               
+                porcentaje = 0;
+            }
+        }
+    } 
 }
+
+descuento = precioLamparasCompradas / 100 * porcentaje;
+precioConDescuento = precioLamparasCompradas - descuento;
+
+iva = (precioConDescuento * 0.10);
+
+if (precioConDescuento >= 120)
+{
+    precioConDescuento = precioConDescuento + iva;
+
+    alert("IIBB Usted pago: " + iva);
+}
+
+document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* INTENTO 1 - MAL (CUENTAS DENTRO DE LOS IF)
