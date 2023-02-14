@@ -26,57 +26,64 @@ function CalcularPrecio ()
    
    precioLamparas = 35 * lamparasCantidad;
 
-   switch (lamparasCantidad)
+   if (isNaN(lamparasCantidad))
    {
-        case 0:
-        case 1:
-        case 2:
-            porcentaje = 0;
-            break;
-        case 3:
-            switch (marca)
-            {
-                case "ArgentinaLuz":
-                    porcentaje = 0.15;
-                    break;
-                case "FelipeLamparas":
-                    porcentaje = 0.10;
-                    break;
-                default:
-                    porcentaje = 0.05;
-            }
-            break;
-        case 4:
-            switch (marca)
-            {
-                case "ArgentinaLuz":
-                case "FelipeLamparas":
-                    porcentaje = 0.25;
-                    break;
-                default:
-                    porcentaje = 0.20;
-            }
-            break;
-        case 5: 
-            switch (marca)
-            {
-                case "ArgentinaLuz":
-                    porcentaje = 0.40;
-                    break;
-                default:
-                    porcentaje = 0.30;
-            }
-            break;
-        case 6:
-            switch (marca)
-            {
-                default:
-                    porcentaje = 0.50;
-            }
-            break;
-        default:
-            porcentaje = 0;
+        alert("Ingrese un numero"); 
    }
+   else
+   {
+        if (lamparasCantidad < 3)
+        {
+            porcentaje = 0;
+        }
+        else
+        {
+            switch (lamparasCantidad)
+            {
+                case 3:
+                    switch (marca)
+                    {
+                        case "ArgentinaLuz":
+                            porcentaje = 0.15;
+                            break;
+                        case "FelipeLamparas":
+                            porcentaje = 0.10;
+                            break;
+                        default:
+                            porcentaje = 0.05;
+                    }
+                    break;
+                case 4:
+                    switch (marca)
+                    {
+                        case "ArgentinaLuz":
+                        case "FelipeLamparas":
+                            porcentaje = 0.25;
+                            break;
+                        default:
+                            porcentaje = 0.20;
+                    }
+                    break;
+                case 5: 
+                    switch (marca)
+                    {
+                        case "ArgentinaLuz":
+                            porcentaje = 0.40;
+                            break;
+                        default:
+                            porcentaje = 0.30;
+                    }
+                    break;
+                default:
+                    switch (marca)
+                    {
+                        default:
+                            porcentaje = 0.50;
+                    }
+            }
+        }
+   }
+   
 
    porcentajeTotal = precioLamparas * porcentaje;
 

@@ -1,12 +1,22 @@
 /*
 Al presionar el botón pedir un sexo
-'f' para femenino, 'm' para masculino.*/
+'f' para femenino, 'm' para masculino.
+
+
+VALIDAR DATO: LA CONDICION MIENTRAS, SE EJECUTA INFINITAMENTE MIENTRAS EL DATO INGRESADO
+NO CUMPLA CON LA CONDICION REQUERIDA.
+*/
+
 function mostrar()
 {
-	var sexoIngresado;
-	sexoIngresado = prompt("ingrese f ó m .");
+	let sexoIngresado;
 
+	sexoIngresado = prompt("ingrese f o m .");
 
+	while(sexoIngresado != "f" && sexoIngresado != "m")
+	{
+		sexoIngresado = prompt("Ingrese sexo nuevamente, lo que ingresó no es valido");
+	}
 
-	txtIdSexo.value=sexoIngresado;
-}//FIN DE LA FUNCIÓN
+	document.getElementById("txtIdSexo").value = sexoIngresado;
+}//ENTREGADO

@@ -3,7 +3,7 @@ function mostrar()
 	let numeroRandom;
 	let mensaje;
 
-	numeroRandom = Math.round(Math.random()*10);
+	numeroRandom = Math.floor(Math.random() * (11 - 1) + 1); 
 
 	
 	if (numeroRandom <= 10 && numeroRandom > 8)

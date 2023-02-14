@@ -10,20 +10,63 @@ hasta que el usuario quiera, mostrar:
 7-Promedio de positivos.
 8-Promedios de negativos.
 9-Diferencia entre positivos y negativos, (positvos-negativos). */
+
 function mostrar()
-{
-	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
+{ 
+	//let respuesta;
+	let numeroIngresado;
+	let sumaNegativos=0;
+	let sumaPositivos=0;
+	let cantidadNegativos=0;
+	let cantidadPositivos=0;
+	let cantidadCeros=0;
+	let cantidadPares=0;
+	let promedioNegativos;
+	let promedioPositivos;
+	let diferencia;
 
-	respuesta="si";
+	numeroIngresado = prompt("Ingresa un numero:");
+	numeroIngresado = parseInt(numeroIngresado);
 
-	while(respuesta=="si")
-	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+	while (!isNaN(numeroIngresado))
+	{	
+		switch (numeroIngresado % 2)
+		{
+			case 0:
+				cantidadPares += 1 ;
+		}
 
-	document.write("la suma de negativos es :"+sumaNegativos);
-}//FIN DE LA FUNCIÓN
+		if(numeroIngresado == 0)
+		{
+			cantidadCeros++;
+			cantidadPares += 1;
+			cantidadPositivos++;
+		}
+		else
+		{
+			if (numeroIngresado > 0)
+			{
+				sumaPositivos += numeroIngresado;
+				cantidadPositivos++;
+				
+			}
+			else
+			{
+				sumaNegativos += numeroIngresado;
+				cantidadNegativos++;
+			}
+		}
+
+		numeroIngresado = prompt("Ingresa otro numero, si así lo desea:");
+		numeroIngresado = parseInt(numeroIngresado);
+	}
+	promedioNegativos = sumaNegativos / cantidadNegativos;
+	promedioPositivos = sumaPositivos / cantidadPositivos;
+	diferencia = sumaPositivos - sumaNegativos;
+
+	document.write("la suma de negativos es: "+ sumaNegativos+ ". La suma de los positivos es: " + sumaPositivos);
+	document.write("la cantidad de negativos es: " + cantidadNegativos+ ". La cantidad de positivos es: " + cantidadPositivos+". La cantidad de '0' es: " + cantidadCeros);
+	document.write("cantidad de numeros pares: " + cantidadPares + ". Promedio de positivos: " + promedioPositivos +". Promedio de negativos: "+ promedioNegativos);
+	document.write("La resta de los positivos por los negativos es: " + diferencia);
+
+}//ENTREGADO
