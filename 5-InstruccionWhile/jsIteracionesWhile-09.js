@@ -7,6 +7,55 @@ function mostrar()
 	let numeroIngresado;
 	let numeroMaximo;
 	let numeroMinimo;
+	let banderaDelPrimero; // Para hacer algo por primera vez 
+	let respuesta;
+	
+	banderaDelPrimero = true;
+
+	do 
+	{
+		do 
+		{
+			numeroIngresado = prompt("Ingrese un valor numérico:");
+			numeroIngresado = parseInt(numeroIngresado);
+
+		} while (isNaN(numeroIngresado));
+
+		if (banderaDelPrimero == true) //IF no WHILE xq se tiene que ejecutar 1 vez, es al pedo un while
+		{
+			banderaDelPrimero = false;
+			numeroMaximo = numeroIngresado;
+			numeroMinimo = numeroIngresado;
+
+		}
+		else
+		{
+			if (numeroIngresado >= numeroMaximo)
+			{
+				numeroMaximo = numeroIngresado;
+			}
+			else
+			{
+				if (numeroIngresado < numeroMinimo)
+				{
+					numeroMinimo = numeroIngresado;
+				}
+			}
+		}
+		respuesta = confirm("desea ingresar otro numero?") // pide "aceptar", true o "cancelar", false
+
+	} while (respuesta == true);
+
+	document.getElementById("txtIdMaximo").value = numeroMaximo;
+	document.getElementById("txtIdMinimo").value = numeroMinimo;
+	
+}//ENTREGADO
+
+/*	SIN DO WHILE	
+
+	let numeroIngresado;
+	let numeroMaximo;
+	let numeroMinimo;
 	let bandera; 
 	let respuesta;
 	
@@ -24,11 +73,11 @@ function mostrar()
 			numeroIngresado = parseInt(numeroIngresado);
 		}
 
-		while (bandera == true)
+		if (bandera == true)
 		{
+			bandera = false;
 			numeroMaximo = numeroIngresado;
 			numeroMinimo = numeroIngresado;
-			bandera = false;
 		}
 
 		if (numeroIngresado > numeroMaximo)
@@ -46,8 +95,13 @@ function mostrar()
 	}
 	document.getElementById("txtIdMaximo").value = numeroMaximo;
 	document.getElementById("txtIdMinimo").value = numeroMinimo;
-	
-}//ENTREGADO
+
+*/
+
+
+
+
+
 
 /*	SIN BANDERA Y CON NaN
 
