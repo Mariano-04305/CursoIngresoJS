@@ -8,16 +8,17 @@ function mostrar()
 	let acumuladorNegativos;
 	let numsIngres;
 	//let respuesta;
-	let primerNumeroNegativo;
+	let bandera;	// suele inizializar contadores o valores como numero maximo o minimo
 
+	bandera = true;
 	//respuesta = "si";
 	contador = 0;
 	acumuladorPositivos = 0;
-	acumuladorNegativos = 0; //ARRANCA EN 1 XQ MULTIPLICAR POR 0, ES 0 Y POR 1, ES EL MISMO NUM
+	acumuladorNegativos = 0; 
 
 	numsIngres = prompt("Ingrese un numero");
 	numsIngres = parseInt(numsIngres);
-
+	
 	if (numsIngres < 0)
 	{
 		primerNumeroNegativo = numsIngres;
@@ -31,7 +32,12 @@ function mostrar()
 		}
 		else
 		{
-			acumuladorNegativos = 1;
+			while (bandera == true)
+			{
+				acumuladorNegativos ++;
+				bandera = false;
+			}
+
 			acumuladorNegativos *= numsIngres;
 		}
 			

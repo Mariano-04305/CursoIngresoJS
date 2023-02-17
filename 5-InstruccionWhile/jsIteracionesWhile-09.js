@@ -4,6 +4,53 @@ mostrar el número máximo y el número mínimo ingresado.*/
 
 function mostrar()
 {	
+	let numeroIngresado;
+	let numeroMaximo;
+	let numeroMinimo;
+	let bandera; 
+	let respuesta;
+	
+	respuesta = "si";
+	bandera = true;
+
+	while(respuesta == "si")
+	{
+		numeroIngresado = prompt("Ingrese un numero:");
+		numeroIngresado = parseInt(numeroIngresado);
+
+		while(isNaN(numeroIngresado))
+		{
+			numeroIngresado = prompt("Ese valor no es numerico. Inrese un numero:");
+			numeroIngresado = parseInt(numeroIngresado);
+		}
+
+		while (bandera == true)
+		{
+			numeroMaximo = numeroIngresado;
+			numeroMinimo = numeroIngresado;
+			bandera = false;
+		}
+
+		if (numeroIngresado > numeroMaximo)
+		{
+			numeroMaximo = numeroIngresado;
+		}
+		else
+		{
+			if (numeroIngresado < numeroMinimo)
+			{
+				numeroMinimo = numeroIngresado;
+			}
+		}
+		respuesta = prompt("'si' en caso de querer ingresar un nuevo número:");
+	}
+	document.getElementById("txtIdMaximo").value = numeroMaximo;
+	document.getElementById("txtIdMinimo").value = numeroMinimo;
+	
+}//ENTREGADO
+
+/*	SIN BANDERA Y CON NaN
+
 	let numerosIngresados;
 	let numeroMaximo;
 	let numeroMinimo;
@@ -34,5 +81,5 @@ function mostrar()
 	}
 	document.getElementById("txtIdMaximo").value = numeroMaximo;
 	document.getElementById("txtIdMinimo").value = numeroMinimo;
-	
-}//ENTREGADO
+
+*/
