@@ -1,8 +1,13 @@
 function mostrar()
 {
+    let repetcionesHola;
 
-	var repetciones = prompt("ingrese el número de repeticiones");
-	alert("ok");
+    repetcionesHola = prompt("Cuantas veces quieres que aparezca 'hola'?");
+    repetcionesHola = parseInt(repetcionesHola);
 
+    for (; repetcionesHola > 0 ; repetcionesHola --)
+    {
+       alert("Hola");
+    }
 
 }//FIN DE LA FUNCIÓN

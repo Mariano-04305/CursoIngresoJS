@@ -57,7 +57,7 @@ function mostrar()
 			}
 		}
 		
-		respuesta = confirm("Desea ingresar otro numero?");
+		respuesta = confirm("Desea ingresar otro numero?");	// el confirm es true si en la pestaña emergente apretas aceptar y false si en la misma apretas cancelar
 	} while(respuesta == true);
 
 	promedioPositivos = sumaNegativos / cantidadPositivos;
@@ -91,15 +91,8 @@ function mostrar()
 	let promedioPositivos;
 	let diferencia;
 
-	let respuesta;
-
 	numeroIngresado = prompt("Ingresa un numero:");
 	numeroIngresado = parseInt(numeroIngresado);
-
-	do 
-	{
-
-	} while(respuesta == true);
 
 	while (!isNaN(numeroIngresado))
 	{	

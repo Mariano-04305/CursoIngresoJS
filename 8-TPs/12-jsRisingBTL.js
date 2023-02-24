@@ -24,7 +24,7 @@ function ComenzarIngreso ()
 		edadIngresada = prompt("Ingrese su edad: ")
 		edadIngresada = parseInt(edadIngresada);
 
-	} while (isNaN(edadIngresada) || (edadIngresada < 17 || edadIngresada > 91));
+	} while (isNaN(edadIngresada) || (edadIngresada < 18 || edadIngresada > 90));
 	
 	do 
 	{
@@ -35,7 +35,7 @@ function ComenzarIngreso ()
 	{
 		estadoCivilIngresado = prompt("ingrese su estado civil; 1 para 'soltero' 2 para 'casado' 3 para 'divorciado' o 4 para 'viudo'");
 		estadoCivilIngresado = parseInt(estadoCivilIngresado);
-	} while ((isNaN(estadoCivilIngresado)) || ( (estadoCivilIngresado > 4) || (estadoCivilIngresado < 1) ) );
+	} while ((isNaN(estadoCivilIngresado)) || ((estadoCivilIngresado > 4) || (estadoCivilIngresado < 1)) );
 										   
 	switch (estadoCivilIngresado)
 	{
@@ -57,19 +57,14 @@ function ComenzarIngreso ()
 	{
 		sueldoIngresado = prompt("Ingrese su sueldo bruto: ");
 		sueldoIngresado = parseInt(sueldoIngresado);
-	} while (isNaN(sueldoIngresado) || (sueldoIngresado < 7999));
+	} while (isNaN(sueldoIngresado) || (sueldoIngresado < 8000));
 
 	do 
 	{
 		numeroLegajoIngresado = prompt ("Ingrese numero de 4 digitos: ");
 		numeroLegajoIngresado = parseInt(numeroLegajoIngresado);
-	} while(isNaN(numeroLegajoIngresado));
-
-	while(numeroLegajoIngresado < 999 || numeroLegajoIngresado > 10000)
-	{
-		numeroLegajoIngresado = prompt ("Ese numero NO tiene 4 digitos. Ingrese numero de 4 digitos: ");
-		numeroLegajoIngresado = parseInt(numeroLegajoIngresado);
-	}
+	} while(isNaN(numeroLegajoIngresado) || (numeroLegajoIngresado < 1000 || numeroLegajoIngresado > 10000));
+	
 
 	nacionalidadIngresada = prompt("Ingrese su nacionalidad EN MAYÚSCULA; “A” para argentinos, “E” para extranjeros, “N” para nacionalizados: ");
 	while (nacionalidadIngresada != "A" && nacionalidadIngresada != "E" && nacionalidadIngresada != "N")
@@ -95,5 +90,5 @@ function ComenzarIngreso ()
 	document.getElementById("txtIdEstadoCivil").value = estadoCivilIngresado;
 	document.getElementById("txtIdSueldo").value = sueldoIngresado;
 	document.getElementById("txtIdLegajo").value = numeroLegajoIngresado;
-	document.getElementById("txtIdNacionalidad").value = nacionalidadIngresada;
+	document.getElementById("txtIdNacionalidad").value = nacionalidad;
 }
