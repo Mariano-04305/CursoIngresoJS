@@ -133,6 +133,8 @@ function VerificarPrimo()
 
 function NumerosPrimos()
 {
+    let acumuladorPrimos = 0;
+
     divisibles = 0;
     divisor = 10;
 
@@ -155,7 +157,7 @@ function NumerosPrimos()
 
         if (divisibles < 3)
         {   
-            numeroPositivoIngresado = primo;
+            primo = numeroPositivoIngresado;
             do
             {
                 divisor == 10;
@@ -166,18 +168,22 @@ function NumerosPrimos()
                     {
                         divisibles ++;
                     }
+                    else
+                    {
+                        acumuladorPrimos == primo + "";
+                    }
                     divisor --;
                 }  
 
                 if (divisibles < 3)
                 {
-                    primo += primo += "";
+                      ;
                 }
 
                 primo --;
             } while(primo > 0);
         }
     }
-    alert(mensaje);
+    alert(primo);
 // AGREGAR STRING VACIO "" A NUMBER PARA CONVERTIRLO EN STRING Y CONCATENAR
 }
