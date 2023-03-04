@@ -37,16 +37,16 @@ do
 {
     x = prompt("");
     x = parseInt(x);
-} while (isNaN(x));
+} while (isNaN(x) || x < 1 );
 
 do
 {
-    cantidadBolsas = prompt("");
-    cantidadBolsas = parseInt(cantidadBolsas);
-} while (isNaN(cantidadBolsas) || cantidadBolsas < 0);
+    x = prompt("");
+    x = parseInt(x);
+} while (isNaN(x));
 
 
-// Maximo y minimo
+// Maximo CON PROMEDIO
 let acumuladorAlcohol = 0;
 let acumuladorBarbi = 0;
 let acumuladorJabon = 0;
@@ -55,22 +55,65 @@ let maximoAcumUnidadesNombre;
 if (acumuladorAlcohol > acumuladorBarbi && acumuladorAlcohol > acumuladorJabon)
     {
         maximoAcumUnidadesNombre = "Alcohol";
-        promedioUnidadesMaximo = acumuladorAlcohol / contadorAlcohol; // esto es solo si tmb tenes q hacer promedio con cada uno de los tipos
+        promedioUnidadesMaximo = acumuladorAlcohol / contadorAlcohol; 
     }
     else
     {
         if (acumuladorBarbi > acumuladorJabon)
         {
             maximoAcumUnidadesNombre = "Barbijo";
-            promedioUnidadesMaximo = acumuladorBarbi / contadorBarbi; // esto es solo si tmb tenes q hacer promedio con cada uno de los tipos
+            promedioUnidadesMaximo = acumuladorBarbi / contadorBarbi; 
         }
         else
         {
             maximoAcumUnidadesNombre = "Jabon";
-            promedioUnidadesMaximo = acumuladorJabon / contadorJabon; // esto es solo si tmb tenes q hacer promedio con cada uno de los tipos
+            promedioUnidadesMaximo = acumuladorJabon / contadorJabon; 
         }
     }
 
+    
+// Maximo SIN PROMEDIO
+if (acumuladorAlcohol > acumuladorBarbi && acumuladorAlcohol > acumuladorJabon)
+    {
+        maximoAcumUnidadesNombre = "Alcohol";    
+    }
+    else
+    {
+        if (acumuladorBarbi > acumuladorJabon)
+        {
+            maximoAcumUnidadesNombre = "Barbijo";
+        }
+        else
+        {
+            maximoAcumUnidadesNombre = "Jabon";
+        }
+    }
+
+
+// MAXIMO CONTEMPLANDO Q UNO NO TIENE MAS Q EL OTRO
+
+if (acumuladorAlcohol > acumuladorBarbi && acumuladorAlcohol > acumuladorJabon)
+{
+    maximoAcumUnidadesNombre = "Alcohol";    
+}
+else
+{
+    if (acumuladorBarbi > acumuladorJabon && acumuladorBarbi > acumuladorAlcohol)
+    {
+        maximoAcumUnidadesNombre = "Barbijo";
+    }
+    else
+    {
+        if(acumuladorJabon > acumuladorAlcohol && acumuladorJabon > acumuladorBarbi)
+        {
+            maximoAcumUnidadesNombre = "Jabon";
+        }
+        else
+        {
+            maximoAcumUnidadesNombre = "NO HAY UNO QUE TENGA MAS QUE AMBOS"
+        }
+    }
+}
 
 // BANDERA Una condicion
 let precioIngresado;
@@ -149,4 +192,29 @@ porcentajetNotasAprobadas = (contadorNotaAprobada * 100) / contadorNotas;
 
 
 // Doc
+
 document.write("" + "<br>");
+
+
+// SI X NO ES 0, PARA QUE NO TE DE NAN EN PROMEDIO
+
+if (contadorSuperRaras != 0)
+{
+    document.write("El promedio de precio de 'X': " + promedioPrecioSRaras + "<br>");
+}
+else
+{
+    document.write("NO se puede hacer el promedio de 'X'porque no se ingreso ninguno de ese tipo" + "<br>");
+}
+
+
+// SI MAXIMO O MINIMO DE BANDERA ES UNDEFINED...
+
+if (x != undefined)
+{
+    document.write("de 'x', el menor es: " + nombreMenorKporCaja + "<br>");
+}
+else
+{
+    document.write("No se ingresó ningun 'x'. no hay menor" + "<br>");
+}
