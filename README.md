@@ -1,4 +1,7 @@
 # **CursoIngresoJS**
+
+Curso de ingreso a la UTN con javascript. Practica de ejercicios lógicos
+
 -----
 Curso de ingreso con JavaScript
 
